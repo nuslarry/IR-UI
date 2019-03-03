@@ -16,4 +16,4 @@ def home():
 @app.route("/about")
 
 def about():
-    return "about "\
+    return "about "
