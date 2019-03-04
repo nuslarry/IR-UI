@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content%}
+    <h4 style="font-size:100px; position:absolute;top:200px;left:500px">Team 16 Search Engine</h4>
+    <form action="{{ url_for("searchResult") }}" method="POST"  style="position:absolute;top:400px; left:550px;margin:0 auto;">
+        {{form.hidden_tag()}}
+
+            {{ form.query(placeholder="{{query}}",style=" width:750px; height:50px;box-shadow: 3px 10px 4px -7px #888888;border-style: solid;") }}
+            
+            {{ form.submit(style="width:100px;height:50px")}}
+    </form>
+    <p style="font-size:25px; position:absolute;top:550px;left:500px">
+        {% for i in range(urlsLen) %}
+        {{i}}.     <a href="{{urls[i]}}">{{urls[i]}}</a><br>
+        {% endfor %}
+    </p>
+{% endblock content%}

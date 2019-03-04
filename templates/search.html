@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block content%}
+    <h4 style="font-size:100px; position:absolute;top:200px;left:500px">Team 16 Search Engine</h4>
+    <form action="{{ url_for("searchResult") }}" method="POST"  style="position:absolute;top:400px; left:550px;margin:0 auto;">
+        {{form.hidden_tag()}}
+            {{ form.query(style="width:750px; height:50px;box-shadow: 3px 10px 4px -7px #888888;border-style: solid;") }}  
+            {{ form.submit(style="width:100px;height:50px")}}
+    </form>
+{% endblock content%}
